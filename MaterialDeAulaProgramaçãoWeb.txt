@@ -1,0 +1,14 @@
+Comandos powerShell:
+python -m venv env --> criar o ambiente
+.\activate --> começar a instancia de maquina virtual --> aparece na esquerda "env" --> apenas para instalação de bibliotecas;
+Comando para usuário não autorizado:
+set-executionpolicy remotesigned currentUser
+pip install "nome da biblioteca" --> exemplo: flask
+
+Selecionando manualmente o interpretador --> chama o python.exe de dentro da pasta para executar. Comando: .\Scripts\python.exe main.py
+
+Aula 27/08
+
+Usando herança para renderizar paginas HTML;
+Criação de um "block" dentro do HTML "base";
+

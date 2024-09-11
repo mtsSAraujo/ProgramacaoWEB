@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <body>
+        {% if usuario %}
+            <h3>Olá {{ usuario }}, tudo bem? </h3>
+        {% else %}
+            <h3>Usuário não autenticado</h3>
+        {% endif %}
+
+        {% for i in range(variable_name) %}
+            <h4> {{ i }} </h4>
+        {% endfor %}
+    </body> <!-- Jinja linguagem do flask para fazer essas condicionais -->
+</html>

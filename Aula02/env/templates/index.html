@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block conteudo %}
+    <section class="main-content">
+        <h2>Welcome to our website!</h2>
+        <p>This is the homepage content.</p>
+        <img src = "static/ImagemQualquer.png">
+        <img src = {{ url_for('static', filename='ImagemQualquer.png') }}>
+    </section>
+{% endblock %}
