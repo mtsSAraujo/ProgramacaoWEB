@@ -10,4 +10,20 @@ def index():
 def about():
     return render_template("about.html")
 
+@app.route("/menu")
+def menu():
+    return render_template("menu.html")
+
+@app.route("/reservation")
+def reservation():
+    return render_template("reservation.html")
+
+@app.route("/special-dishes")
+def special_dishes():
+    return render_template("special-dishes.html")
+
+@app.route("/team")
+def team():
+    return render_template("team.html")
+
 app.run(debug = True)
