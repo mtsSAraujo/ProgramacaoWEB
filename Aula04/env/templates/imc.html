@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>IMC</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="static/bootstrap.css">
+
+</head>
+<body>
+    <h1>Calcular indice de massa corporal, usando POST</h1>
+    <form class="form-control" action="calcular_imc_post" method="post">
+        <label class="form-label">Sua altura</label>
+        <input class="form-control" type="text" name="txt_altura"><br>
+        <label class="form-label">Seu peso</label>
+        <input class="form-control" type="text" class="form-control-plaintext" name="txt_peso"><br>
+        <input class="btn btn-primary" type="submit" value="Calcular">
+        <input class="btn btn-primary" type="reset" value="Limpar">
+    </form>
+</body>
+</html>
