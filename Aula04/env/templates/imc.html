@@ -9,14 +9,20 @@
 
 </head>
 <body>
-    <h1>Calcular indice de massa corporal, usando POST</h1>
+    <h1>Calcular Índice de Massa Corporal (IMC)</h1>
     <form class="form-control" action="calcular_imc_post" method="post">
-        <label class="form-label">Sua altura</label>
-        <input class="form-control" type="text" name="txt_altura"><br>
-        <label class="form-label">Seu peso</label>
-        <input class="form-control" type="text" class="form-control-plaintext" name="txt_peso"><br>
+        <label class="form-label">Sua altura (em metros)</label>
+        <input class="form-control" type="text" name="txt_altura" required><br>
+
+        <label class="form-label">Seu peso (em kg)</label>
+        <input class="form-control" type="text" name="txt_peso" required><br>+
+
         <input class="btn btn-primary" type="submit" value="Calcular">
-        <input class="btn btn-primary" type="reset" value="Limpar">
+        <input class="btn btn-secondary" type="reset" value="Limpar">
+
+        {% if imc is not none %}
+            <p><strong>Seu IMC é: </strong>{{ imc }}</p>
+        {% endif %}
     </form>
 </body>
 </html>
