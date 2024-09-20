@@ -23,6 +23,27 @@
         {% if imc is not none %}
             <p><strong>Seu IMC é: </strong>{{ imc }}</p>
         {% endif %}
+        {% if classificacao is not none %}
+            <p><strong>Sua classificação é: </strong>{{ classificacao }}</p>
+        {% endif %}
+    </form>
+    <h1>Calcular Índice de Massa Corporal (IMC) -- Método GET</h1>
+    <form class="form-control" action="calcular_imc_get" method="get">
+        <label class="form-label">Sua altura (em metros)</label>
+        <input class="form-control" type="text" name="txt_altura" required><br>
+
+        <label class="form-label">Seu peso (em kg)</label>
+        <input class="form-control" type="text" name="txt_peso" required><br>+
+
+        <input class="btn btn-primary" type="submit" value="Calcular">
+        <input class="btn btn-secondary" type="reset" value="Limpar">
+
+        {% if imc is not none %}
+            <p><strong>Sua classificação é: </strong>{{ imc }}</p>
+        {% endif %}
+        {% if classificacao is not none %}
+            <p><strong>Sua classificação é: </strong> <img src="{{ classificacao }}" alt="Classificação"></p>
+        {% endif %}
     </form>
 </body>
 </html>
