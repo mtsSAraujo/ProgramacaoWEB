@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-from mysql_connector import
+import mysql.connector
 
 app = Flask(__name__)
 
@@ -12,6 +12,6 @@ def inserirUsuario():
     nome = request.form["txt_nome"]
     email = request.form["txt_email"]
     senha = request.form["txt_senha"]
-    return nome, email, senha
+    db = mysql.connector.connect(host = "201.23.3.86", user = "usr_aluno", password = "E$tud@_m@1$", port = 5000, database = "aula_fatec")
 
 app.run()
