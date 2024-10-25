@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 @app.route("/login")
 def loginPage():
-    return render_template("login.html")
+    return render_template("login.html", senhaErrada = "")
 
 @app.route("/login", methods = ["POST"])
 def validarLogin():
