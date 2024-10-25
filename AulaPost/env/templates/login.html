@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+    <style>
+        /* CSS Customizado */
+        body {
+            background-color: #f0f2f5;
+        }
+        .form-container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #007bff;
+        }
+        .btn-primary {
+            width: 100%;
+            padding: 10px;
+        }
+        .form-control {
+            border-radius: 5px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .container {
+            max-width: 1200px;
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            color: #6c757d;
+        }
+        .error-message {
+            color: red;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+                <div class="form-container">
+                    <h1 class="mb-4">Login</h1>
+                    
+                    <!-- Exibir mensagem de erro caso exista -->
+                    {% if senhaErrada %}
+                        <div class="error-message">
+                            {{ senhaErrada }}
+                        </div>
+                    {% endif %}
+                    
+                    <form action="login" method="post">
+                        <div class="form-group">
+                            <label for="usuario" class="form-label">Usuário:</label>
+                            <input type="text" class="form-control" id="txt_usuario" name="txt_usuario" placeholder="Digite seu usuário">
+                        </div>
+                        <div class="form-group">
+                            <label for="senha" class="form-label">Senha:</label>
+                            <input type="password" class="form-control" id="txt_senha" name="txt_senha" placeholder="Digite sua senha">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Login</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 - Todos os direitos reservados</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
