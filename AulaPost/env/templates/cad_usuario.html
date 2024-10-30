@@ -66,6 +66,28 @@
         </div>
     </div>
 
+    <div class="container mt-5">
+        <h2>Lista de Usuários</h2>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Usuário</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in users %}
+                    <tr>
+                        <td>{{ user[0] }}</td>
+                        <td>{{ user[1] }}</td>
+                        <td>{{ user[2] }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
     <footer>
         <p>&copy; 2024 - Todos os direitos reservados</p>
     </footer>

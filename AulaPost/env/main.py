@@ -23,14 +23,32 @@ def validarLogin():
     query = "SELECT usuario, senha from Mateus_tbusuario where usuario = %s and senha = %s"
     meu_cursor = db.cursor()
     meu_cursor.execute(query, (usuario, senha))
-    if meu_cursor.fetchall():
+    results = meu_cursor.fetchall()
+    db.close()
+    
+    if results:
         return "Deu certo"
     else:
         return render_template("login.html", senhaErrada = "Usuário ou senha inválido")
 
 @app.route("/user")
 def userPage():
-    return render_template("cad_usuario.html")
+    return render_template("cad_usuario.html", users = findAllUser())
+
+def findAllUser():
+    db = mysql.connector.connect(
+        host="201.23.3.86",
+        user="usr_aluno",
+        password="E$tud@_m@1$",
+        port=5000,
+        database="aula_fatec"
+    )
+    query = "SELECT codigo, usuario, email FROM Mateus_tbusuario"
+    meu_cursor = db.cursor()
+    meu_cursor.execute(query)
+    results = meu_cursor.fetchall()
+    db.close()
+    return results
 
 @app.route("/user", methods = ["POST"])
 def inserirUsuario():
@@ -53,6 +71,7 @@ def inserirUsuario():
     meu_cursor.execute(query, valores)
     db.commit()
 
+    db.close()
     return render_template("cad_usuario.html")
 
 @app.route("/client")
@@ -84,6 +103,7 @@ def inserirCliente():
     meu_cursor.execute(query, valores)
     db.commit()
 
+    db.close()
     return render_template("cad_cliente.html")
 
 app.run(debug = True)
