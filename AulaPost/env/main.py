@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, flash
+from flask import Flask, render_template, request, redirect, url_for
 import mysql.connector
 
 app = Flask(__name__)
@@ -49,6 +49,27 @@ def findAllUser():
     results = meu_cursor.fetchall()
     db.close()
     return results
+
+@app.route("/user/<user>")
+def deleteUser(user):
+    deleteUserById(user)
+    return redirect(url_for("userPage"))
+
+
+def deleteUserById(userId):
+    db = mysql.connector.connect(
+        host="201.23.3.86",
+        user="usr_aluno",
+        password="E$tud@_m@1$",
+        port=5000,
+        database="aula_fatec"
+    )
+    meu_cursor = db.cursor()
+    query = "DELETE FROM Mateus_tbusuario WHERE codigo = " + userId
+    meu_cursor.execute(query)
+    db.commit()
+    return
+
 
 @app.route("/user", methods = ["POST"])
 def inserirUsuario():
