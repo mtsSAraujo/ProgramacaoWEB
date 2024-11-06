@@ -50,10 +50,10 @@ def findAllUser():
     db.close()
     return results
 
-@app.route("/user/<user>")
-def deleteUser(user):
-    deleteUserById(user)
-    return redirect(url_for("userPage"))
+@app.route("/deleteUser/<userId>")
+def deleteUser(userId):
+    deleteUserById(userId)
+    return redirect(url_for("userPage")) ## Fiz assim para refazer a listagem e mostrar a atualização acontecendo
 
 
 def deleteUserById(userId):
@@ -93,7 +93,7 @@ def inserirUsuario():
     db.commit()
 
     db.close()
-    return render_template("cad_usuario.html")
+    return redirect(url_for("userPage"))
 
 @app.route("/client")
 def clientPage():
